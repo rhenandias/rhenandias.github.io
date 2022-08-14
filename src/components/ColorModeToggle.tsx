@@ -1,11 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { ColorMode, useColorMode } from "@chakra-ui/react";
-// import "./ColorModeToggle.css";
 
-interface Props {
-  colorMode: ColorMode;
-}
+import { BsMoonFill, BsSunFill } from "react-icons/bs";
+import { useColorMode } from "@chakra-ui/react";
 
 const Button = styled.button`
   opacity: 0.65;
@@ -33,82 +30,23 @@ const Button = styled.button`
   }
 `;
 
-const Div = styled.div`
-  position: relative;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: ${(props: Props) =>
-    props.colorMode === "dark" ? "4px solid #cbd5e0" : "none"};
-  background-color: ${(props: Props) =>
-    props.colorMode === "dark" ? "#cbd5e0" : "transparent"};
-  transform: ${(props: Props) =>
-    props.colorMode === "dark" ? "scale(0.55)" : "scale(1)"};
-  transition: all 0.45s ease;
-  overflow: ${(props: Props) =>
-    props.colorMode === "dark" ? "visible" : "hidden"};
-  box-shadow: ${(props: Props) =>
-    props.colorMode === "dark" ? "none" : "inset 8px -8px 0px 0px #000"};
-
-  &:before {
-    content: "";
-    position: absolute;
-    right: -9px;
-    top: -9px;
-    height: 24px;
-    width: 24px;
-    border: ${(props: Props) =>
-      props.colorMode === "dark" ? "2px solid #cbd5e0" : "none"};
-    border-radius: 50%;
-    transform: ${(props: Props) =>
-      props.colorMode === "dark"
-        ? "translate(14px, -14px)"
-        : "translate(0, 0)"};
-    opacity: ${(props: Props) => (props.colorMode === "dark" ? 0 : 1)};
-    transition: transform 0.45s ease;
-  }
-
-  &:after {
-    content: "";
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    margin: -4px 0 0 -4px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    box-shadow: 0 -23px 0 #cbd5e0, 0 23px 0 #cbd5e0, 23px 0 0 #cbd5e0,
-      -23px 0 0 #cbd5e0, 15px 15px 0 #cbd5e0, -15px 15px 0 #cbd5e0,
-      15px -15px 0 #cbd5e0, -15px -15px 0 #cbd5e0;
-    transform: ${(props: Props) =>
-      props.colorMode === "dark" ? "scale(1)" : "scale(0)"};
-    transition: all 0.35s ease;
-  }
-`;
-
 function ColorModeToggle() {
   const { colorMode, toggleColorMode } = useColorMode();
 
-  console.log("Render");
-
   return (
     <>
-      {/* <label className="dayNight">
-        <input type="checkbox" />
-        <div></div>
-      </label> */}
-
       <Button
         onClick={toggleColorMode}
         type="button"
         aria-label={
-          colorMode === "dark" ? `Activate Light Mode` : `Activate Dark Mode`
+          colorMode === "dark" ? `Ativar Modo Claro` : `Ativar Modo Escuro`
         }
         title={
-          colorMode === "dark" ? `Activate Light Mode` : `Activate Dark Mode`
+          colorMode === "dark" ? `Ativar Modo Claro` : `Ativar Modo Escuro`
         }
       >
-        <Div colorMode={colorMode} />
+        {colorMode === "dark" && <BsSunFill size={23} />}
+        {colorMode === "light" && <BsMoonFill size={23} />}
       </Button>
     </>
   );
