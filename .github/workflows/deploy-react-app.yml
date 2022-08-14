@@ -8,6 +8,7 @@ on:
 jobs:
   build_test:
     runs-on: ubuntu-latest
+    environment: github-pages
 
     strategy:
       matrix:
@@ -26,5 +27,5 @@ jobs:
       - name: deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: ./build
