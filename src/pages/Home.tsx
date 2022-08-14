@@ -1,26 +1,19 @@
 import React from "react";
-import { Link as ReachLink } from "react-router-dom";
 
-import {
-  Button,
-  Text,
-  Box,
-  Flex,
-  Link,
-  Divider,
-  Heading,
-} from "@chakra-ui/react";
+import { Flex, Divider } from "@chakra-ui/react";
 
 import Header from "../components/Header";
+import ProfileHeader from "../components/ProfileHeader";
 
 function Home() {
   return (
     <>
       <Flex direction="column" align="center" w="100%">
-        <Flex justify="center" w="70%" mt="10" direction="column">
-          <Header />
-        </Flex>
-        <Divider w="70%" mt="5" />
+        <Header />
+
+        <Divider w={["90%", "70%"]} mt="5" />
+
+        <ProfileHeader />
       </Flex>
     </>
   );
