@@ -34,8 +34,8 @@ function ProfileHeader() {
           Sistemas e trabalho com desenvolvimento <em>Fullstack</em>.
         </Text>
         <Text mt={4}>
-          Aqui você encontra um pouco sobre mim, projetos que já desenvolvi ou
-          estou desenvolvendo, e sobre coisas que estou apredendo no momento.
+          Aqui você encontra um pouco sobre mim, projetos em que já trabalhei ou
+          estou trabalhando, e sobre coisas que estou aprendendo no momento.
         </Text>
         <Flex justify={["center", "left"]} align={"center"} mt="4">
           <SocialMedia
