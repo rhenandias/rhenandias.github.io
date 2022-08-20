@@ -1,20 +1,19 @@
 import React from "react";
 
-import { Flex, Divider } from "@chakra-ui/react";
-
 import Header from "../components/Header";
 import ProfileHeader from "../components/ProfileHeader";
+import Page from "../components/Page";
 
 function Home() {
   return (
     <>
-      <Flex direction="column" align="center" w="100%">
-        <Header />
+      <Page>
+        <Page.Content>
+          <Header />
 
-        <Divider w={["90%", "70%"]} mt="5" />
-
-        <ProfileHeader />
-      </Flex>
+          <ProfileHeader />
+        </Page.Content>
+      </Page>
     </>
   );
 }
