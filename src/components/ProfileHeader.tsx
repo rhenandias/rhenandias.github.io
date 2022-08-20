@@ -6,7 +6,7 @@ import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import Octocat from "../assets/octocat.png";
 import Invertocat from "../assets/invertocat.png";
 import LinkedIn from "../assets/linkedin.png";
-import InvertedIn from "../assets/invertedin.png";
+import Email from "../assets/email.png";
 
 function ProfileHeader() {
   return (
@@ -14,8 +14,7 @@ function ProfileHeader() {
       direction={["column", "column", "row"]}
       justify="center"
       align="center"
-      py="10"
-      w={["100%", "70%"]}
+      py={8}
     >
       <Box>
         <ProfilePicture />
@@ -31,7 +30,7 @@ function ProfileHeader() {
         </Heading>
         <Text mt={4}>
           Meu nome é Rhenan, estou cursando Análise e Desenvolvimento de
-          Sistemas e trabalho com desenvolvimento <em>Fullstack</em>.
+          Sistemas e sou desenvolvedor <em>Fullstack</em>.
         </Text>
         <Text mt={4}>
           Aqui você encontra um pouco sobre mim, projetos em que já trabalhei ou
@@ -44,15 +43,26 @@ function ProfileHeader() {
             url="https://github.com/rhenandias"
             alt="Link para o GitHub"
             boxSize={"40px"}
-            mr="5"
+            mr="3"
           />
 
           <SocialMedia
-            imgDark={InvertedIn}
+            imgDark={LinkedIn}
             imgLight={LinkedIn}
             boxSize={"43px"}
             alt="Link para o LinkedIn"
             url="https://www.linkedin.com/in/rhenandiasmorais/"
+            mr="3"
+          />
+
+          <SocialMedia
+            imgDark={Email}
+            imgLight={Email}
+            boxSize={"43px"}
+            alt="Link para o LinkedIn"
+            target="_blank"
+            url="mailto:diasrhenan@gmail.com"
+            mr="3"
           />
         </Flex>
       </Flex>
