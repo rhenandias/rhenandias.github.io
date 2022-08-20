@@ -1,13 +1,15 @@
 import React from "react";
 
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Text, Divider } from "@chakra-ui/react";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <>
-      <Flex justify={"space-between"} color="gray.600" pt={2} pb={6}>
+      <Divider mb={4} />
+
+      <Flex justify={"space-between"} color="gray.600" pt={2} pb={3}>
         <Flex direction={"column"}>
           <Text>Rhenan Dias</Text>
         </Flex>

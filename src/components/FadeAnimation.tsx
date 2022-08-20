@@ -1,6 +1,6 @@
 import React, { useState, useEffect, ReactNode } from "react";
 
-import { Fade, ScaleFade } from "@chakra-ui/react";
+import { ScaleFade } from "@chakra-ui/react";
 
 interface Props {
   children: ReactNode;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 function FadeAnimation({ children, idx }: Props) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   useEffect(() => {
     setTimeout(() => {

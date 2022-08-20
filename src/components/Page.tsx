@@ -6,26 +6,14 @@ interface Props {
   children: ReactNode;
 }
 
-function Page(props: Props) {
+function Page({ children }: Props) {
   return (
-    <Flex direction="column" align="center" w="100%" height={"100vh"}>
-      {props.children}
+    <Flex direction="column" align="center" h={"100vh"}>
+      <Flex direction="column" w={["90%", "70%"]} maxW={"1080px"} h={"100vh"}>
+        {children}
+      </Flex>
     </Flex>
   );
 }
-
-Page.Content = function Content(props: Props) {
-  return (
-    <Flex
-      justify="center"
-      direction="column"
-      w={["90%", "70%"]}
-      mt="10"
-      maxW={"1080px"}
-    >
-      {props.children}
-    </Flex>
-  );
-};
 
 export default Page;
