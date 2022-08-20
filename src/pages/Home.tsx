@@ -3,6 +3,7 @@ import React from "react";
 import Header from "../components/Header";
 import ProfileHeader from "../components/ProfileHeader";
 import Page from "../components/Page";
+import FadeAnimation from "../components/FadeAnimation";
 
 function Home() {
   return (
@@ -10,8 +11,9 @@ function Home() {
       <Page>
         <Page.Content>
           <Header />
-
-          <ProfileHeader />
+          <FadeAnimation idx={1}>
+            <ProfileHeader />
+          </FadeAnimation>
         </Page.Content>
       </Page>
     </>
