@@ -7,7 +7,7 @@ interface Props {
 }
 
 function Content({ children }: Props) {
-  return <Box h={"100vh"}>{children}</Box>;
+  return <Box>{children}</Box>;
 }
 
 export default Content;
