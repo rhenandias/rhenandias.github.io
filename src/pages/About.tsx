@@ -11,7 +11,15 @@ import Content from "../components/Content";
 import dayjs from "dayjs";
 import Emoji from "react-emoji-render";
 
-import { Divider, Text, Heading, Flex } from "@chakra-ui/react";
+import {
+  Divider,
+  Text,
+  Heading,
+  Flex,
+  Container,
+  UnorderedList,
+  ListItem,
+} from "@chakra-ui/react";
 
 import IFSP from "../assets/ifsp.png";
 import SENAI from "../assets/senai.png";
@@ -68,6 +76,36 @@ function About() {
         <FadeAnimation idx={7}>
           <Divider mt={4} />
         </FadeAnimation>
+
+        <Heading fontSize={"2xl"} my={"5"}>
+          Principais Habilidades
+        </Heading>
+
+        <Flex direction={["column", "row"]}>
+          <Container>
+            <UnorderedList>
+              <ListItem>
+                Construção de <em>backend</em> e APIs em Node
+              </ListItem>
+              <ListItem>
+                Desenvolvimento de <em>frontend</em> em React
+              </ListItem>
+              <ListItem>HTML, JavaScript, CSS</ListItem>
+              <ListItem>Bancos de dados relacionais MySQL/PostgreSQL</ListItem>
+              <ListItem>Containers (Docker e Docker Compose)</ListItem>
+            </UnorderedList>
+          </Container>
+          <Container>
+            <UnorderedList>
+              <ListItem>Serviços em nuvem (AWS, Heroku, Firebase)</ListItem>
+              <ListItem>Programação de sistemas embarcados em C/C++</ListItem>
+              <ListItem>Conhecimentos em Python, Java e PHP</ListItem>
+              <ListItem>Sistema operacional Linux</ListItem>
+            </UnorderedList>
+          </Container>
+        </Flex>
+
+        <Divider mt={4} />
 
         <Heading fontSize={"2xl"} my={"5"}>
           Educação
