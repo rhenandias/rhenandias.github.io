@@ -6,7 +6,7 @@ import { Box, Flex, Link, Heading, Divider } from "@chakra-ui/react";
 function Header() {
   return (
     <>
-      <Flex direction="row" justify="space-between" align="center">
+      <Flex direction="row" justify="space-between" align="center" mt={10}>
         <Box>
           <ReachLink to="/">
             <Heading fontSize="3xl">Rhenan Dias</Heading>
