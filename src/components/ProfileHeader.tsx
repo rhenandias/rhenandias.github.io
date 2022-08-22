@@ -1,4 +1,5 @@
 import React from "react";
+
 import ProfilePicture from "./ProfilePicture";
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 

@@ -9,12 +9,12 @@ function Footer() {
     <>
       <Divider mb={4} />
 
-      <Flex justify={"space-between"} color="gray.600" pt={2} pb={3}>
+      <Flex justify={"space-between"} color="gray.600" pt={1} pb={2}>
         <Flex direction={"column"}>
           <Text>Rhenan Dias</Text>
         </Flex>
         <Flex justify={"center"} textAlign={"center"}>
-          <Text>Guarulhos - São Paulo, {currentYear}</Text>
+          <Text>Guarulhos, São Paulo - {currentYear}</Text>
         </Flex>
       </Flex>
     </>
