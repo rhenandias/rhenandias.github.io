@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import Education from "../components/Education";
 import FadeAnimation from "../components/FadeAnimation";
 import Content from "../components/Content";
+import TechImage from "../components/TechImage";
 
 import dayjs from "dayjs";
 import Emoji from "react-emoji-render";
@@ -19,10 +20,22 @@ import {
   Container,
   UnorderedList,
   ListItem,
+  Image,
 } from "@chakra-ui/react";
 
 import IFSP from "../assets/ifsp.png";
 import SENAI from "../assets/senai.png";
+
+import NodeIcon from "../assets/techs/nodejs.svg";
+import ReactIcon from "../assets/techs/react.svg";
+import PostgreIcon from "../assets/techs/postgresql.svg";
+import MysqlIcon from "../assets/techs/mysql.svg";
+import DockerIcon from "../assets/techs/docker.svg";
+import HerokuIcon from "../assets/techs/heroku.svg";
+import AwsIcon from "../assets/techs/aws.svg";
+import FirebaseIcon from "../assets/techs/firebase.svg";
+import LinuxIcon from "../assets/techs/linux.svg";
+import PostmanIcon from "../assets/techs/postman.svg";
 
 function About() {
   const age = dayjs().diff("1997-04-05", "year");
@@ -84,12 +97,8 @@ function About() {
         <Flex direction={["column", "row"]}>
           <Container>
             <UnorderedList>
-              <ListItem>
-                Construção de <em>backend</em> e APIs em Node
-              </ListItem>
-              <ListItem>
-                Desenvolvimento de <em>frontend</em> em React
-              </ListItem>
+              <ListItem>Construção de backend e APIs em Node.js</ListItem>
+              <ListItem>Desenvolvimento de frontend em React.js</ListItem>
               <ListItem>HTML, JavaScript, CSS</ListItem>
               <ListItem>Bancos de dados relacionais MySQL/PostgreSQL</ListItem>
               <ListItem>Containers (Docker e Docker Compose)</ListItem>
@@ -98,11 +107,33 @@ function About() {
           <Container>
             <UnorderedList>
               <ListItem>Serviços em nuvem (AWS, Heroku, Firebase)</ListItem>
+              <ListItem>
+                Testes automatizados e CI/CD (Jest e GitHub Actions)
+              </ListItem>
               <ListItem>Programação de sistemas embarcados em C/C++</ListItem>
               <ListItem>Conhecimentos em Python, Java e PHP</ListItem>
               <ListItem>Sistema operacional Linux</ListItem>
             </UnorderedList>
           </Container>
+        </Flex>
+
+        <Divider mt={4} />
+
+        <Heading fontSize={"2xl"} my={"5"}>
+          Principais Ferramentas
+        </Heading>
+
+        <Flex direction={"row"} justify={"space-evenly"} wrap={"wrap"}>
+          <TechImage img={NodeIcon} name={"Node.js"} alt={"Node.js"} />
+          <TechImage img={ReactIcon} name={"React.js"} alt={"React.js"} />
+          <TechImage img={PostgreIcon} name={"PostgreSQL"} alt={"PostgreSQL"} />
+          <TechImage img={MysqlIcon} name={"MySQL"} alt={"MySQL"} />
+          <TechImage img={DockerIcon} name={"Docker"} alt={"Docker"} />
+          <TechImage img={AwsIcon} name={"AWS"} alt={"AWS"} />
+          <TechImage img={HerokuIcon} name={"Heroku"} alt={"Heroku"} />
+          <TechImage img={FirebaseIcon} name={"Firebase"} alt={"Firebase"} />
+          <TechImage img={PostmanIcon} name={"Postman"} alt={"Postman"} />
+          <TechImage img={LinuxIcon} name={"Linux"} alt={"Linux"} />
         </Flex>
 
         <Divider mt={4} />
