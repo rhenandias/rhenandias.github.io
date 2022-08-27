@@ -20,7 +20,6 @@ import {
   Container,
   UnorderedList,
   ListItem,
-  Image,
 } from "@chakra-ui/react";
 
 import IFSP from "../assets/ifsp.png";
@@ -124,16 +123,66 @@ function About() {
         </Heading>
 
         <Flex direction={"row"} justify={"space-evenly"} wrap={"wrap"}>
-          <TechImage img={NodeIcon} name={"Node.js"} alt={"Node.js"} />
-          <TechImage img={ReactIcon} name={"React.js"} alt={"React.js"} />
-          <TechImage img={PostgreIcon} name={"PostgreSQL"} alt={"PostgreSQL"} />
-          <TechImage img={MysqlIcon} name={"MySQL"} alt={"MySQL"} />
-          <TechImage img={DockerIcon} name={"Docker"} alt={"Docker"} />
-          <TechImage img={AwsIcon} name={"AWS"} alt={"AWS"} />
-          <TechImage img={HerokuIcon} name={"Heroku"} alt={"Heroku"} />
-          <TechImage img={FirebaseIcon} name={"Firebase"} alt={"Firebase"} />
-          <TechImage img={PostmanIcon} name={"Postman"} alt={"Postman"} />
-          <TechImage img={LinuxIcon} name={"Linux"} alt={"Linux"} />
+          <TechImage
+            img={NodeIcon}
+            name={"Node.js"}
+            alt={"Node.js"}
+            url={"https://nodejs.org/pt-br/"}
+          />
+          <TechImage
+            img={ReactIcon}
+            name={"React.js"}
+            alt={"React.js"}
+            url={"https://pt-br.reactjs.org/"}
+          />
+          <TechImage
+            img={PostgreIcon}
+            name={"PostgreSQL"}
+            alt={"PostgreSQL"}
+            url={"https://www.postgresql.org/"}
+          />
+          <TechImage
+            img={MysqlIcon}
+            name={"MySQL"}
+            alt={"MySQL"}
+            url={"https://www.mysql.com/"}
+          />
+          <TechImage
+            img={DockerIcon}
+            name={"Docker"}
+            alt={"Docker"}
+            url={"https://www.docker.com/"}
+          />
+          <TechImage
+            img={AwsIcon}
+            name={"AWS"}
+            alt={"AWS"}
+            url={"https://aws.amazon.com/pt/"}
+          />
+          <TechImage
+            img={HerokuIcon}
+            name={"Heroku"}
+            alt={"Heroku"}
+            url={"https://www.heroku.com/"}
+          />
+          <TechImage
+            img={FirebaseIcon}
+            name={"Firebase"}
+            alt={"Firebase"}
+            url={"https://firebase.google.com/?hl=pt-br"}
+          />
+          <TechImage
+            img={PostmanIcon}
+            name={"Postman"}
+            alt={"Postman"}
+            url={"https://www.postman.com/"}
+          />
+          <TechImage
+            img={LinuxIcon}
+            name={"Linux"}
+            alt={"Linux"}
+            url={"https://xubuntu.org/"}
+          />
         </Flex>
 
         <Divider mt={4} />
