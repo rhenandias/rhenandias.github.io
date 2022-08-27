@@ -25,7 +25,7 @@ function Education({ img, title, school, level, year }: Props) {
           borderRadius="10%"
           src={img}
           alt="Imagem da Instituição Educacional"
-          boxSize={"70px"}
+          boxSize={"50px"}
           mr={[4]}
         />
         <Flex direction={"column"}>
