@@ -39,7 +39,7 @@ function Header({ title, content }: Props) {
           <ChakraLink color="gray.500" mr="5" as={Link} href="/">
             Início
           </ChakraLink>
-          <ChakraLink color="gray.500" mr="5" as={Link} href="/about">
+          <ChakraLink color="gray.500" mr="5" as={Link} href="/sobre">
             Sobre
           </ChakraLink>
           <ChakraLink color="gray.500" mr="5" as={Link} href="/">
