@@ -1,16 +1,18 @@
 import React from "react";
 
+import Image, { StaticImageData } from "next/image";
+
 import {
   Flex,
   Heading,
   ListItem,
   UnorderedList,
-  Image,
+  Image as ChakraImage,
   Text,
 } from "@chakra-ui/react";
 
 interface Props {
-  img: string;
+  img: StaticImageData;
   title: string;
   school: string;
   level: string;
@@ -18,12 +20,16 @@ interface Props {
 }
 
 function Education({ img, title, school, level, year }: Props) {
+  const forced = img as unknown;
+  const forcedString = forced as string;
+
   return (
     <>
       <Flex mb={5}>
-        <Image
+        <ChakraImage
+          as={Image}
           borderRadius="10%"
-          src={img}
+          src={forcedString}
           alt="Imagem da Instituição Educacional"
           boxSize={"50px"}
           mr={[4]}

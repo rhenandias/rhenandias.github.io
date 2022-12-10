@@ -41,7 +41,10 @@ function About() {
 
   return (
     <Page>
-      <Header />
+      <Header
+        title="Rhenan Dias - Sobre Mim"
+        content="Aqui você pode encontrar um pouco mais de informações sobre minha experiência e formação."
+      />
 
       <Content>
         <FadeAnimation idx={1}>
@@ -197,7 +200,7 @@ function About() {
             "Instituto Federal de Educação, Ciência e Tecnologia de São Paulo"
           }
           level={"Ensino Superior - Tecnólogo"}
-          year={"2020 - Atual"}
+          year={"2020 - 2022"}
           img={IFSP}
         />
 

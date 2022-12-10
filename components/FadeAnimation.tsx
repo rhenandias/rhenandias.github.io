@@ -14,7 +14,7 @@ function FadeAnimation({ children, idx }: Props) {
     setTimeout(() => {
       setOpen(true);
     }, idx * 100);
-  }, []);
+  }, [idx]);
 
   return (
     <ScaleFade initialScale={0.6} in={open}>

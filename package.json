@@ -1,44 +1,35 @@
 {
-  "name": "rhenandias.github.io",
+  "name": "rhenandias",
   "homepage": "https://rhenandias.github.io",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.0.8",
-    "@chakra-ui/react": "^2.2.6",
+    "@chakra-ui/icons": "^2.0.13",
+    "@chakra-ui/react": "^2.4.3",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "@mdx-js/mdx": "^2.1.2",
-    "@mdx-js/react": "^2.1.2",
-    "@mdx-js/rollup": "^2.1.2",
-    "dayjs": "^1.11.5",
+    "@types/node": "18.11.13",
+    "@types/react": "18.0.26",
+    "@types/react-dom": "18.0.9",
+    "dayjs": "^1.11.7",
+    "eslint": "8.29.0",
+    "eslint-config-next": "13.0.6",
     "framer-motion": "^6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "13.0.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-emoji-render": "^1.2.4",
-    "react-icons": "^4.4.0",
-    "react-router-dom": "6",
-    "styled-components": "^5.3.5"
+    "react-icons": "^4.7.1",
+    "styled-components": "^5.3.6",
+    "typescript": "4.9.4"
   },
   "devDependencies": {
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
-    "@types/styled-components": "^5.1.26",
-    "@typescript-eslint/eslint-plugin": "^5.33.0",
-    "@typescript-eslint/parser": "^5.33.0",
-    "@vitejs/plugin-react": "^2.0.1",
-    "eslint": "^8.21.0",
-    "eslint-plugin-react": "^7.30.1",
-    "typescript": "^4.6.4",
-    "vite": "^3.0.7"
-  },
-  "main": "index.js",
-  "author": "rhenandias <diasrhenan@gmail.com>",
-  "license": "MIT"
+    "@types/styled-components": "^5.1.26"
+  }
 }
