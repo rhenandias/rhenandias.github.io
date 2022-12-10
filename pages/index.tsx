@@ -10,7 +10,10 @@ import Content from "../components/Content";
 function Home() {
   return (
     <Page>
-      <Header />
+      <Header
+        title={"Rhenan Dias"}
+        content="Bem vindo ao meu portfólio pessoal."
+      />
 
       <Content>
         <FadeAnimation idx={1}>

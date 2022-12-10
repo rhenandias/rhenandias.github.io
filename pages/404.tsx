@@ -1,5 +1,7 @@
 import React from "react";
-import { Link as ReachLink } from "react-router-dom";
+
+import Link from "next/link";
+import Image from "next/image";
 
 import Header from "../components/Header";
 import Page from "../components/Page";
@@ -9,28 +11,24 @@ import FadeAnimation from "../components/FadeAnimation";
 
 import NotFoundImage from "../assets/notfoundspace.png";
 
-import {
-  Heading,
-  Text,
-  Image,
-  Flex,
-  Container,
-  Button,
-} from "@chakra-ui/react";
+import { Heading, Text, Flex, Container, Button } from "@chakra-ui/react";
 
 import { ArrowBackIcon } from "@chakra-ui/icons";
 
 function NotFound() {
   return (
     <Page>
-      <Header />
+      <Header
+        title="Rhenan Dias - Oops ..."
+        content="A página que você está procurando não foi encontrada."
+      />
 
       <Content>
         <Flex direction={["column", "row", "row"]} w={"100%"} align={"center"}>
           <FadeAnimation idx={1}>
             <Container>
               <Image
-                w={"400px"}
+                width={400}
                 src={NotFoundImage}
                 alt="Página não encontrada"
               />
@@ -56,8 +54,8 @@ function NotFound() {
                 leftIcon={<ArrowBackIcon />}
                 colorScheme="gray"
                 my={3}
-                as={ReachLink}
-                to={"/"}
+                as={Link}
+                href={"/"}
               >
                 Página Inicial
               </Button>

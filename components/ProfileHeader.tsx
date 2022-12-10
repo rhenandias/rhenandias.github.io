@@ -37,8 +37,8 @@ function ProfileHeader() {
         </FadeAnimation>
         <FadeAnimation idx={4}>
           <Text mt={4}>
-            Meu nome é Rhenan, estou cursando Análise e Desenvolvimento de
-            Sistemas e sou desenvolvedor <em>Fullstack</em>.
+            Meu nome é Rhenan, sou formado em Análise e Desenvolvimento de
+            Sistemas e Automação Industrial.
           </Text>
         </FadeAnimation>
         <FadeAnimation idx={5}>

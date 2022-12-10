@@ -1,6 +1,8 @@
 import React from "react";
 
-import { Flex, Heading, Image, Link } from "@chakra-ui/react";
+import Image from "next/image";
+
+import { Flex, Heading, Image as ChakraImage, Link } from "@chakra-ui/react";
 
 interface Props {
   img: string;
@@ -13,7 +15,13 @@ function TechImage({ img, name, alt, url }: Props) {
   return (
     <Link href={url} isExternal>
       <Flex direction={"column"} align={"center"} my={2}>
-        <Image src={img} boxSize={"50px"} alt={alt} mx={[6, 6, 2]} />
+        <ChakraImage
+          as={Image}
+          src={img}
+          boxSize={50}
+          alt={alt}
+          mx={[6, 6, 2]}
+        />
         <Heading fontSize={"md"} mt={3}>
           {name}
         </Heading>
