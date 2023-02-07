@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -35,6 +35,8 @@ import {
   ModalHeader,
 } from "@chakra-ui/react";
 
+import { ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
+
 import LogoBinx from "./resources/logo.png";
 import Arquitetura from "./resources/arquitetura.png";
 import Integracoes from "./resources/integracoes.png";
@@ -46,9 +48,32 @@ import Prospeccao from "./resources/prospeccao.png";
 import GifMenuLateral from "./resources/menu_lateral.gif";
 import GifDashboard from "./resources/gif_dashboard.gif";
 
+const galleryPictures = [
+  {
+    src: Painel,
+  },
+  {
+    src: Frete,
+  },
+  {
+    src: Prospeccao,
+  },
+];
+
 function Binx() {
   const { colorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const [galleryIdx, setGalleryIdx] = useState<number>(0);
+
+  const galleryArrow = (direction: number) => {
+    let nextIdx = galleryIdx + direction;
+
+    if (nextIdx < 0) nextIdx = galleryPictures.length - 1;
+    if (nextIdx > galleryPictures.length - 1) nextIdx = 0;
+
+    setGalleryIdx(nextIdx);
+  };
 
   return (
     <Page>
@@ -251,21 +276,7 @@ function Binx() {
           <em>Integrações que são realizadas consumindo APIs de terceiros.</em>
         </Text>
 
-        <Flex
-          my={6}
-          justify={["center", "center"]}
-          align={["center", "center"]}
-          direction={["column", "row"]}
-        >
-          <ChakraImage
-            m={2}
-            as={Image}
-            src={LoginWeb}
-            borderRadius={10}
-            width={["90%"]}
-            alt="Logo Binx"
-          />
-        </Flex>
+        {/* A partir daqui teste da galeria */}
 
         <Flex
           my={6}
@@ -275,84 +286,41 @@ function Binx() {
         >
           <ChakraImage
             cursor={"pointer"}
-            onClick={onOpen}
+            onClick={() => {
+              setGalleryIdx(0);
+              onOpen();
+            }}
             m={2}
             as={Image}
             src={Painel}
             borderRadius={10}
-            width={["90%"]}
+            w={["40%"]}
             alt="Logo Binx"
           />
-        </Flex>
-
-        <Flex
-          my={6}
-          justify={["center", "center"]}
-          align={["center", "center"]}
-          direction={["column", "row"]}
-        >
           <ChakraImage
             cursor={"pointer"}
-            onClick={onOpen}
+            onClick={() => {
+              setGalleryIdx(1);
+              onOpen();
+            }}
             m={2}
             as={Image}
             src={Frete}
             borderRadius={10}
-            width={["100%"]}
+            w={["40%"]}
             alt="Logo Binx"
           />
-        </Flex>
-
-        <Flex
-          my={6}
-          justify={["center", "center"]}
-          align={["center", "center"]}
-          direction={["column", "row"]}
-        >
           <ChakraImage
             cursor={"pointer"}
-            onClick={onOpen}
+            onClick={() => {
+              setGalleryIdx(2);
+              onOpen();
+            }}
             m={2}
             as={Image}
             src={Prospeccao}
             borderRadius={10}
-            width={["100%"]}
-            alt="Logo Binx"
-          />
-        </Flex>
-
-        <Flex
-          my={6}
-          justify={["center", "center"]}
-          align={["center", "center"]}
-          direction={["column", "row"]}
-        >
-          <ChakraImage
-            cursor={"pointer"}
-            onClick={onOpen}
-            m={2}
-            as={Image}
-            src={GifMenuLateral}
-            borderRadius={10}
-            width={["100%"]}
-            alt="Logo Binx"
-          />
-        </Flex>
-
-        <Flex
-          my={6}
-          justify={["center", "center"]}
-          align={["center", "center"]}
-          direction={["column", "row"]}
-        >
-          <ChakraImage
-            cursor={"pointer"}
-            onClick={onOpen}
-            m={2}
-            as={Image}
-            src={GifDashboard}
-            borderRadius={10}
-            width={["100%"]}
+            w={["40%"]}
             alt="Logo Binx"
           />
         </Flex>
@@ -364,14 +332,25 @@ function Binx() {
           <ModalHeader></ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <ChakraImage
-              onClick={onOpen}
-              m={2}
-              as={Image}
-              src={Prospeccao}
-              borderRadius={10}
-              alt="Logo Binx"
-            />
+            <Flex align={"center"} grow={"1"}>
+              <ChevronLeftIcon
+                boxSize={25}
+                cursor={"pointer"}
+                onClick={() => galleryArrow(-1)}
+              />
+              <ChakraImage
+                m={5}
+                as={Image}
+                src={galleryPictures[galleryIdx].src}
+                borderRadius={10}
+                maxWidth={"92%"}
+              />
+              <ChevronRightIcon
+                boxSize={25}
+                cursor={"pointer"}
+                onClick={() => galleryArrow(1)}
+              />
+            </Flex>
           </ModalBody>
         </ModalContent>
       </Modal>
