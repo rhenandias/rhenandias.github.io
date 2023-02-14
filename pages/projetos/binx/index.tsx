@@ -22,21 +22,10 @@ import {
   Image as ChakraImage,
   Link as ChakraLink,
   useColorMode,
-  AspectRatio,
   UnorderedList,
   ListItem,
-  Modal,
-  ModalOverlay,
-  ModalBody,
   useDisclosure,
-  ModalContent,
-  ModalFooter,
-  ModalCloseButton,
-  ModalHeader,
-  Fade,
 } from "@chakra-ui/react";
-
-import { ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 
 import LogoBinx from "./resources/logo.png";
 import Arquitetura from "./resources/arquitetura.png";
@@ -48,64 +37,17 @@ import Frete from "./resources/frete.png";
 import Prospeccao from "./resources/prospeccao.png";
 import GifMenuLateral from "./resources/menu_lateral.gif";
 import GifDashboard from "./resources/gif_dashboard.gif";
-
-const galleryPictures = [
-  {
-    src: Painel,
-  },
-  {
-    src: Frete,
-  },
-  {
-    src: Prospeccao,
-  },
-];
+import ImageGallery from "../../../components/ImageGallery";
 
 function Binx() {
-  const { colorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const [galleryIdx, setGalleryIdx] = useState<number>(0);
-
-  const [fadeState, setFadeState] = useState(true);
-  const [currentImgSrc, setCurrentImgSrc] = useState(galleryPictures[0].src);
-
-  const setCurrentImg = (idx) => {
-    setGalleryIdx(idx);
-    setCurrentImgSrc(galleryPictures[galleryIdx].src);
-  };
-
-  useEffect(() => {
-    console.log("Mudou");
-
-    const timeout = setTimeout(() => {
-      setFadeState(true);
-      setCurrentImgSrc(galleryPictures[galleryIdx].src);
-    }, 200);
-
-    return () => clearTimeout(timeout);
-  }, [fadeState]);
-
-  const toggleFade = () => {
-    setFadeState(false);
-  };
-
-  const galleryArrow = (direction: number) => {
-    setFadeState(false);
-
-    let nextIdx = galleryIdx + direction;
-
-    if (nextIdx < 0) nextIdx = galleryPictures.length - 1;
-    if (nextIdx > galleryPictures.length - 1) nextIdx = 0;
-
-    setGalleryIdx(nextIdx);
-  };
+  const [openImageIdx, setOpenImageIdx] = useState<number>(0);
 
   return (
     <Page>
       <Header
-        title="Rhenan Dias - Árvore de Natal"
-        content="Uma árvore de natal feita com impressão 3D e Arduino!"
+        title="Rhenan Dias - Binx"
+        content="Plataforma de extensão ao ERP Bling construída em Node.js e React.js."
       />
 
       <Content>
@@ -313,7 +255,7 @@ function Binx() {
           <ChakraImage
             cursor={"pointer"}
             onClick={() => {
-              setCurrentImg(0);
+              setOpenImageIdx(0);
               onOpen();
             }}
             m={2}
@@ -326,7 +268,7 @@ function Binx() {
           <ChakraImage
             cursor={"pointer"}
             onClick={() => {
-              setCurrentImg(1);
+              setOpenImageIdx(1);
               onOpen();
             }}
             m={2}
@@ -339,7 +281,7 @@ function Binx() {
           <ChakraImage
             cursor={"pointer"}
             onClick={() => {
-              setCurrentImg(2);
+              setOpenImageIdx(2);
               onOpen();
             }}
             m={2}
@@ -352,37 +294,22 @@ function Binx() {
         </Flex>
       </Content>
 
-      <Modal isOpen={isOpen} onClose={onClose} size={"6xl"}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader></ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <Flex align={"center"} grow={"1"}>
-              <ChevronLeftIcon
-                boxSize={25}
-                cursor={"pointer"}
-                onClick={() => galleryArrow(-1)}
-              />
-              <Fade in={fadeState}>
-                <ChakraImage
-                  m={5}
-                  as={Image}
-                  src={currentImgSrc}
-                  alt="Galeria"
-                  borderRadius={10}
-                  maxWidth={"92%"}
-                />
-              </Fade>
-              <ChevronRightIcon
-                boxSize={25}
-                cursor={"pointer"}
-                onClick={() => galleryArrow(1)}
-              />
-            </Flex>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+      <ImageGallery
+        pictures={[
+          {
+            src: Painel,
+          },
+          {
+            src: Frete,
+          },
+          {
+            src: Prospeccao,
+          },
+        ]}
+        isOpen={isOpen}
+        onClose={onClose}
+        openImageIdx={openImageIdx}
+      />
 
       <Footer />
     </Page>
