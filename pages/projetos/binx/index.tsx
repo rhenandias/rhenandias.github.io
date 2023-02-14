@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -33,6 +33,7 @@ import {
   ModalFooter,
   ModalCloseButton,
   ModalHeader,
+  Fade,
 } from "@chakra-ui/react";
 
 import { ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
@@ -66,7 +67,32 @@ function Binx() {
 
   const [galleryIdx, setGalleryIdx] = useState<number>(0);
 
+  const [fadeState, setFadeState] = useState(true);
+  const [currentImgSrc, setCurrentImgSrc] = useState(galleryPictures[0].src);
+
+  const setCurrentImg = (idx) => {
+    setGalleryIdx(idx);
+    setCurrentImgSrc(galleryPictures[galleryIdx].src);
+  };
+
+  useEffect(() => {
+    console.log("Mudou");
+
+    const timeout = setTimeout(() => {
+      setFadeState(true);
+      setCurrentImgSrc(galleryPictures[galleryIdx].src);
+    }, 200);
+
+    return () => clearTimeout(timeout);
+  }, [fadeState]);
+
+  const toggleFade = () => {
+    setFadeState(false);
+  };
+
   const galleryArrow = (direction: number) => {
+    setFadeState(false);
+
     let nextIdx = galleryIdx + direction;
 
     if (nextIdx < 0) nextIdx = galleryPictures.length - 1;
@@ -287,7 +313,7 @@ function Binx() {
           <ChakraImage
             cursor={"pointer"}
             onClick={() => {
-              setGalleryIdx(0);
+              setCurrentImg(0);
               onOpen();
             }}
             m={2}
@@ -300,7 +326,7 @@ function Binx() {
           <ChakraImage
             cursor={"pointer"}
             onClick={() => {
-              setGalleryIdx(1);
+              setCurrentImg(1);
               onOpen();
             }}
             m={2}
@@ -313,7 +339,7 @@ function Binx() {
           <ChakraImage
             cursor={"pointer"}
             onClick={() => {
-              setGalleryIdx(2);
+              setCurrentImg(2);
               onOpen();
             }}
             m={2}
@@ -338,13 +364,16 @@ function Binx() {
                 cursor={"pointer"}
                 onClick={() => galleryArrow(-1)}
               />
-              <ChakraImage
-                m={5}
-                as={Image}
-                src={galleryPictures[galleryIdx].src}
-                borderRadius={10}
-                maxWidth={"92%"}
-              />
+              <Fade in={fadeState}>
+                <ChakraImage
+                  m={5}
+                  as={Image}
+                  src={currentImgSrc}
+                  alt="Galeria"
+                  borderRadius={10}
+                  maxWidth={"92%"}
+                />
+              </Fade>
               <ChevronRightIcon
                 boxSize={25}
                 cursor={"pointer"}
