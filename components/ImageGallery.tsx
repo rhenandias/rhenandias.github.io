@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import Image from "next/image";
 
 import {
@@ -22,20 +22,27 @@ interface ImageGalleryProps {
   openImageIdx: number;
 }
 
+interface ReducerAction {
+  idx: number;
+}
+
 export default function ImageGallery({
   pictures,
   isOpen,
   onClose,
   openImageIdx,
 }: ImageGalleryProps) {
-  console.log("Abrindo em ", openImageIdx);
-
   const [fade, setFade] = useState<boolean>(true);
   const [pictureIdx, setPictureIdx] = useState<number>(openImageIdx);
 
-  const [currentImgSrc, setCurrentImgSrc] = useState(
+  const [currentImgSrc, dispatch] = useReducer(
+    currentImgReducer,
     pictures[openImageIdx].src
   );
+
+  function currentImgReducer(currentImgSrc: string, action: ReducerAction) {
+    return pictures[action.idx].src;
+  }
 
   const changePicture = (direction: number) => {
     let nextIdx = pictureIdx + direction;
@@ -51,20 +58,23 @@ export default function ImageGallery({
 
     const timeout = setTimeout(() => {
       setFade(true);
-      setCurrentImgSrc(pictures[pictureIdx].src);
+      dispatch({
+        idx: pictureIdx,
+      });
     }, 200);
 
     return () => clearTimeout(timeout);
   }, [pictureIdx]);
 
   return (
+    // Tamanho anterior: 6xl
     <Modal isOpen={isOpen} onClose={onClose} size={"6xl"}>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader></ModalHeader>
         <ModalCloseButton />
         <ModalBody>
-          <Flex align={"center"} grow={"1"}>
+          <Flex align={"center"} justify={"center"} grow={"1"}>
             <ChevronLeftIcon
               boxSize={25}
               cursor={"pointer"}
@@ -78,6 +88,7 @@ export default function ImageGallery({
                 alt="Galeria"
                 borderRadius={10}
                 maxWidth={"92%"}
+                maxHeight={"500px"}
               />
             </Fade>
             <ChevronRightIcon
@@ -85,6 +96,23 @@ export default function ImageGallery({
               cursor={"pointer"}
               onClick={() => changePicture(1)}
             />
+          </Flex>
+          <Flex align={"center"} justify={"center"}>
+            {pictures.map((picture, idx) => (
+              <ChakraImage
+                key={idx}
+                m={5}
+                as={Image}
+                src={picture.src}
+                alt="Galeria"
+                borderRadius={10}
+                maxWidth={"150px"}
+                cursor={"pointer"}
+                onClick={() => {
+                  setPictureIdx(idx);
+                }}
+              />
+            ))}
           </Flex>
         </ModalBody>
       </ModalContent>
