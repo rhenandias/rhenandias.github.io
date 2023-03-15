@@ -53,9 +53,7 @@ function ArvoreNatal() {
 
       <Content>
         <Flex mt={6} justify={"space-between"} direction={["column", "row"]}>
-          <Heading fontSize={"3xl"}>
-            Árvore de natal feita com impressão 3D e Arduino
-          </Heading>
+          <Heading fontSize={"3xl"}>Árvore de Natal</Heading>
           <HStack spacing={2}>
             <Tag size={"sm"} colorScheme={"blue"}>
               Arduino

@@ -8,6 +8,8 @@ import Page from "../../../components/Page";
 import Footer from "../../../components/Footer";
 import Content from "../../../components/Content";
 import FadeAnimation from "../../../components/FadeAnimation";
+import TechTag from "../../../components/TechTag";
+import ImageGallery from "../../../components/ImageGallery";
 
 import {
   Heading,
@@ -37,7 +39,7 @@ import Frete from "./resources/frete.png";
 import Prospeccao from "./resources/prospeccao.png";
 import GifMenuLateral from "./resources/menu_lateral.gif";
 import GifDashboard from "./resources/gif_dashboard.gif";
-import ImageGallery from "../../../components/ImageGallery";
+import Dashboard1 from "./resources/dashboard_1.png";
 
 function Binx() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -54,22 +56,12 @@ function Binx() {
         <Flex mt={6} justify={"space-between"} direction={["column", "row"]}>
           <Heading fontSize={"3xl"}>Binx</Heading>
 
-          <HStack spacing={2}>
-            <Tag size={"sm"} colorScheme={"blue"}>
-              Node.js
-            </Tag>
-            <Tag size={"sm"} colorScheme={"red"}>
-              React.js
-            </Tag>
-            <Tag size={"sm"} colorScheme={"orange"}>
-              AWS
-            </Tag>
-            <Tag size={"sm"} colorScheme={"cyan"}>
-              Work
-            </Tag>
-            <Tag size={"sm"} colorScheme={"green"}>
-              Fullstack
-            </Tag>
+          <HStack spacing={2} mt={[2, 0]}>
+            <TechTag tech="node" />
+            <TechTag tech="react" />
+            <TechTag tech="aws" />
+            <TechTag tech="mysql" />
+            <TechTag tech="fullstack" />
           </HStack>
         </Flex>
 
@@ -86,6 +78,7 @@ function Binx() {
               src={LogoBinx}
               borderRadius={10}
               alt="Logo Binx"
+              w={"70%"}
             />
           </ChakraLink>
         </Flex>
@@ -110,22 +103,31 @@ function Binx() {
             entre outras soluções.
           </Text>
           <Text>
-            Nasceu para solucionar as dificuldades e necessidades da empresa
-            para qual foi desenvolvido, então são soluções feitas sob medida
-            para o nosso modelo de negócio, seja por falta de integração do ERP
-            com o restante das nossas plataformas, ou por necessidade de
-            automação e agilização de processos.
+            Nasceu para solucionar as dificuldades e necessidades da empresa,
+            seja por falta de integração do ERP com o restante das nossas
+            plataformas, ou por necessidade de automação e agilização de
+            processos.
           </Text>
         </VStack>
 
-        <Heading my={4} fontSize={"xl"}>
-          Um breve resumo
-        </Heading>
+        <ChakraImage
+          cursor={"pointer"}
+          onClick={() => {
+            setOpenImageIdx(0);
+            onOpen();
+          }}
+          as={Image}
+          src={Dashboard1}
+          borderRadius={10}
+          alt="Logo Binx"
+          w={["100%", "90%"]}
+          mx={"auto"}
+          mt={5}
+        />
 
-        <VStack spacing={4} align={"left"}>
-          <Text>...</Text>
-          <Text>...</Text>
-        </VStack>
+        <Text align={"center"} fontSize="sm" my={6} color={"gray.600"}>
+          Dashboard com estatísticas sobre a situação de estoque
+        </Text>
 
         <Heading my={4} fontSize={"xl"}>
           Arquitetura
@@ -146,19 +148,19 @@ function Binx() {
 
         <UnorderedList mt={4}>
           <ListItem>
-            <strong>Route 53:</strong> controle de domínio e zonas hospedadas;
+            <strong>Route 53:</strong> domínio e zonas hospedadas;
           </ListItem>
           <ListItem>
-            <strong>Elastic Beanstalk:</strong> aplicação escalável do backend,
-            API escrita em Node.js;
+            <strong>Elastic Beanstalk:</strong> aplicação escalável do backend
+            (escrito em Node.js)
           </ListItem>
           <ListItem>
             <strong>RDS - Relational Database Service:</strong> banco de dados
             relacional MySQL;
           </ListItem>
           <ListItem>
-            <strong>Amplify:</strong> hospedaghem do frontend escrito em
-            React.js;
+            <strong>Amplify:</strong> hospedagem do frontend (escrito em
+            React.js);
           </ListItem>
           <ListItem>
             <strong>Cognito:</strong> autenticação e controle de acesso da API e
@@ -169,15 +171,14 @@ function Binx() {
             transacionais;
           </ListItem>
           <ListItem>
-            <strong>CloudWatch:</strong> armazenamento de logs e monitoramento;
+            <strong>CloudWatch:</strong> logs e monitoramento;
           </ListItem>
           <ListItem>
             <strong>Event Bridge:</strong> orquestrador de eventos para as
             funções lambda;
           </ListItem>
           <ListItem>
-            <strong>Lambda:</strong> funções serverless para serem executadas
-            periodicamente.
+            <strong>Lambda:</strong> funções serverless execução periodica.
           </ListItem>
         </UnorderedList>
 
@@ -197,10 +198,8 @@ function Binx() {
           />
         </Flex>
 
-        <Text align={"center"} fontSize="sm" my={6}>
-          <em>
-            Visão geral da arquitetura e dos serviços da AWS que são utilizados
-          </em>
+        <Text align={"center"} fontSize="sm" my={6} color={"gray.600"}>
+          Visão geral da arquitetura e dos serviços da AWS que são utilizados
         </Text>
 
         <Heading my={4} fontSize={"xl"}>
@@ -240,8 +239,8 @@ function Binx() {
           />
         </Flex>
 
-        <Text align={"center"} fontSize="sm" my={6}>
-          <em>Integrações que são realizadas consumindo APIs de terceiros.</em>
+        <Text align={"center"} fontSize="sm" my={6} color={"gray.600"}>
+          Integrações que são realizadas consumindo APIs de terceiros.
         </Text>
 
         {/* A partir daqui teste da galeria */}
