@@ -39,7 +39,49 @@ import Arvore3 from "./resources/6.jpg";
 import Arvore4 from "./resources/7.jpg";
 import ArvoreGif2 from "./resources/8.gif";
 
-// import code from "./resources/code";
+const code = `#define size 16
+
+typedef struct led
+{
+  byte pin;
+  int interval;
+  long last_time;
+};
+
+int pins[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, A0, A1};
+
+long current_time;
+
+led leds[size];
+
+void setup()
+{
+  randomSeed(analogRead(A5));
+
+  for (byte i = 0; i < size; i++)
+  {
+    leds[i] = led{pins[i], random(400, 800), 0};
+  }
+
+  for (byte i = 0; i < size; i++)
+  {
+    pinMode(leds[i].pin, OUTPUT);
+  }
+}
+
+void loop()
+{
+  current_time = millis();
+
+  for (byte i = 0; i < size; i++)
+  {
+    if (current_time - leds[i].last_time >= leds[i].interval)
+    {
+      digitalWrite(leds[i].pin, !digitalRead(leds[i].pin));
+      leds[i].last_time = current_time;
+    }
+  }
+}`;
 
 function ArvoreNatal() {
   const { colorMode } = useColorMode();
@@ -242,7 +284,7 @@ function ArvoreNatal() {
           </Text>
         </VStack>
 
-        {/* <Box mt={4}>
+        <Box mt={4}>
           <SyntaxHighlighter
             language="cpp"
             style={colorMode === "dark" ? atomOneDarkReasonable : arduinoLight}
@@ -250,7 +292,7 @@ function ArvoreNatal() {
           >
             {code}
           </SyntaxHighlighter>
-        </Box> */}
+        </Box>
 
         <Flex
           my={5}
