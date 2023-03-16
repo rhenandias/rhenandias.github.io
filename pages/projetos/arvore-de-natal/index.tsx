@@ -39,7 +39,7 @@ import Arvore3 from "./resources/6.jpg";
 import Arvore4 from "./resources/7.jpg";
 import ArvoreGif2 from "./resources/8.gif";
 
-import code from "./resources/code";
+// import code from "./resources/code";
 
 function ArvoreNatal() {
   const { colorMode } = useColorMode();
@@ -242,7 +242,7 @@ function ArvoreNatal() {
           </Text>
         </VStack>
 
-        <Box mt={4}>
+        {/* <Box mt={4}>
           <SyntaxHighlighter
             language="cpp"
             style={colorMode === "dark" ? atomOneDarkReasonable : arduinoLight}
@@ -250,7 +250,7 @@ function ArvoreNatal() {
           >
             {code}
           </SyntaxHighlighter>
-        </Box>
+        </Box> */}
 
         <Flex
           my={5}
