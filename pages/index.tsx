@@ -2,6 +2,9 @@ import React from "react";
 
 import Emoji from "react-emoji-render";
 
+import Image from "next/image";
+import Link from "next/link";
+
 import {
   Container,
   Divider,
@@ -10,6 +13,9 @@ import {
   ListItem,
   Text,
   UnorderedList,
+  Image as ChakraImage,
+  Link as ChakraLink,
+  Button,
 } from "@chakra-ui/react";
 
 import Header from "../components/Header";
@@ -23,6 +29,8 @@ import Education from "../components/Education";
 
 import IFSP from "../assets/ifsp.png";
 import SENAI from "../assets/senai.png";
+import Science from "../assets/science.png";
+import Volunteer from "../assets/volunteer.png";
 
 import NodeIcon from "../assets/techs/nodejs.svg";
 import ReactIcon from "../assets/techs/react.svg";
@@ -34,6 +42,8 @@ import AwsIcon from "../assets/techs/aws.svg";
 import FirebaseIcon from "../assets/techs/firebase.svg";
 import LinuxIcon from "../assets/techs/linux.svg";
 import PostmanIcon from "../assets/techs/postman.svg";
+
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 function Home() {
   return (
@@ -190,9 +200,26 @@ function Home() {
 
         <Divider mt={4} />
 
-        <Heading fontSize={"2xl"} my={"5"}>
-          Educação
-        </Heading>
+        <Flex justify={"space-between"}>
+          <Heading fontSize={"2xl"} my={"5"}>
+            Educação
+          </Heading>
+          <Link
+            href={
+              "https://drive.google.com/file/d/1sHeaTikApu_hMsq6JqqxLQXVlIZwqJjx/view?usp=sharing"
+            }
+            target={"blank"}
+          >
+            <Button
+              colorScheme="teal"
+              size="sm"
+              my={"5"}
+              rightIcon={<ExternalLinkIcon />}
+            >
+              Currículo em PDF
+            </Button>
+          </Link>
+        </Flex>
 
         <Education
           title={"Análise e Desenvolvimento de Sistemas"}
@@ -221,6 +248,155 @@ function Home() {
           year={"2013 - 2014"}
           img={SENAI}
         />
+
+        <Divider mt={4} />
+
+        <Heading fontSize={"2xl"} my={"5"}>
+          Outras Atividades e Eventos
+        </Heading>
+
+        <Flex mb={5}>
+          <ChakraImage
+            as={Image}
+            borderRadius="10%"
+            src={AwsIcon as unknown as string}
+            alt="Logo AWS"
+            boxSize={"50px"}
+            mr={[4]}
+          />
+          <Flex direction={"column"}>
+            <Heading fontSize={"xl"} my={1}>
+              AWS Summit São Paulo 2022
+            </Heading>
+            <Heading fontSize={"md"} my={1}>
+              Transamerica Expo Center
+            </Heading>
+
+            <UnorderedList>
+              <ListItem>
+                <Text my={1}>
+                  Eventro presencial com palestras e workshops sobre inovação e
+                  soluções flexíveis e confiáveis em grande escala oferecidas
+                  pela AWS.
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text my={1}>Data do Evento: Agosto, 2022</Text>
+              </ListItem>
+
+              <ListItem>
+                <Text my={1}>
+                  Publicação no Linkedin:{" "}
+                  <ChakraLink
+                    as={Link}
+                    color="teal"
+                    href={
+                      "https://www.linkedin.com/posts/rhenandiasmorais_aws-summit-saopaulo-activity-6961096942437175296-eKZP?utm_source=share&utm_medium=member_desktop"
+                    }
+                    isExternal
+                  >
+                    AWS Summit São Paulo <ExternalLinkIcon mx={1} mb={1} />
+                  </ChakraLink>
+                </Text>
+              </ListItem>
+            </UnorderedList>
+          </Flex>
+        </Flex>
+
+        <Flex mb={5}>
+          <ChakraImage
+            as={Image}
+            borderRadius="10%"
+            src={Science as unknown as string}
+            alt="Imagem da Instituição Educacional"
+            boxSize={"50px"}
+            mr={[4]}
+          />
+          <Flex direction={"column"}>
+            <Heading fontSize={"xl"} my={1}>
+              Iniciação Científica
+            </Heading>
+            <Heading fontSize={"md"} my={1}>
+              Instituto Federal de Educação, Ciência e Tecnologia de São Paulo
+            </Heading>
+
+            <UnorderedList>
+              <ListItem>
+                <Text my={1}>
+                  Projeto: Dinâmica e Controle de Atuadores Pneumáticos
+                  Industriais
+                </Text>
+              </ListItem>
+
+              <ListItem>
+                <Text my={1}>Fomento: CNPq</Text>
+              </ListItem>
+              <ListItem>
+                <Text my={1}>Data de Publicação: Dezembro, 2019</Text>
+              </ListItem>
+
+              <ListItem>
+                <Text my={1}>
+                  Publicação:{" "}
+                  <ChakraLink
+                    as={Link}
+                    color="teal"
+                    href={
+                      "https://ojs.ifsp.edu.br/index.php/sinergia/article/view/569"
+                    }
+                    isExternal
+                  >
+                    Revista SINERGIA - IFSP <ExternalLinkIcon mx={1} mb={1} />
+                  </ChakraLink>
+                </Text>
+              </ListItem>
+            </UnorderedList>
+          </Flex>
+        </Flex>
+
+        <Flex mb={5}>
+          <ChakraImage
+            as={Image}
+            borderRadius="10%"
+            src={Volunteer as unknown as string}
+            alt="Imagem da Instituição Educacional"
+            boxSize={"50px"}
+            mr={[4]}
+          />
+          <Flex direction={"column"}>
+            <Heading fontSize={"xl"} my={1}>
+              Trabalho Voluntário
+            </Heading>
+            <Heading fontSize={"md"} my={1}>
+              WorldSkills São Paulo 2015
+            </Heading>
+
+            <UnorderedList>
+              <ListItem>
+                <Text my={1}>
+                  43º edição da Olímpiada de conhecimentos técnicos WorldSkills.
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text my={1}>Data do Evento: Agosto, 2015</Text>
+              </ListItem>
+
+              <ListItem>
+                <Text my={1}>
+                  Informações:{" "}
+                  <ChakraLink
+                    as={Link}
+                    color="teal"
+                    href={"https://worldskills.org/what/competitions/wsc2015/"}
+                    isExternal
+                  >
+                    Página do Evento <ExternalLinkIcon mx={1} mb={1} />
+                  </ChakraLink>
+                </Text>
+              </ListItem>
+            </UnorderedList>
+          </Flex>
+        </Flex>
       </Content>
 
       <Footer />
