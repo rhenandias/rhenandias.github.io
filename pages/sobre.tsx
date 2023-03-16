@@ -62,29 +62,31 @@ function About() {
         <FadeAnimation idx={3}>
           <Text lineHeight={2}>
             Desde cedo descobri que eu gostava de tecnologia e queria trabalhar
-            com isso. Iniciei na área de eletrônica, fiz o curso superior de
-            Automação Industrial e me apaixonei por programação.
+            com isso. Iniciei na área de <strong>Eletrônica</strong>, fiz o
+            curso superior de <strong>Automação Industrial</strong> e me
+            apaixonei por programação.
           </Text>
         </FadeAnimation>
 
         <FadeAnimation idx={4}>
           <Text mt={3} lineHeight={2}>
-            Hoje, com {age} anos, aceitei o desafio de migrar de área, cursando
-            Análise e Desenvolvimento de sistemas e com a intenção de atuar como
-            desenvolvedor de software.
+            Querendo continuar na área de programação e tecnologia, fiz minha
+            segunda formação, em{" "}
+            <strong>Análise e Desenvolvimento de Sistemas</strong>, e não
+            pretendo parar por aqui.
           </Text>
         </FadeAnimation>
 
         <FadeAnimation idx={5}>
           <Text mt={3} lineHeight={2}>
             Gosto sempre de estar aprendendo algo novo, mas também gosto de
-            gatos, foguetes, eletrônica, cubos mágicos e hambúrguer!
+            gatos, foguetes, xadrez, impressoras 3D, cubos mágicos e hambúrguer.
           </Text>
         </FadeAnimation>
 
         <FadeAnimation idx={6}>
           <Text textAlign={"center"} my={3}>
-            <Emoji text={":laptop: :cat: :rocket: :hamburger:"} />
+            <Emoji text={":laptop: :cat: :rocket: :hamburger: "} />
           </Text>
         </FadeAnimation>
 
@@ -99,9 +101,11 @@ function About() {
         <Flex direction={["column", "row"]}>
           <Container>
             <UnorderedList>
-              <ListItem>Construção de backend e APIs em Node.js</ListItem>
-              <ListItem>Desenvolvimento de frontend em React.js</ListItem>
-              <ListItem>HTML, JavaScript, CSS</ListItem>
+              <ListItem>
+                Desenvolvimento Node.js, React.js e React Native
+              </ListItem>
+              <ListItem>Construção e documentação de API&apos;s</ListItem>
+              <ListItem>HTML, JavaScript, CSS, Typescript</ListItem>
               <ListItem>Bancos de dados relacionais MySQL/PostgreSQL</ListItem>
               <ListItem>Containers (Docker e Docker Compose)</ListItem>
             </UnorderedList>
@@ -139,6 +143,12 @@ function About() {
             url={"https://pt-br.reactjs.org/"}
           />
           <TechImage
+            img={ReactIcon}
+            name={"React Native"}
+            alt={"React Native"}
+            url={"https://reactnative.dev/"}
+          />
+          <TechImage
             img={PostgreIcon}
             name={"PostgreSQL"}
             alt={"PostgreSQL"}
@@ -162,12 +172,7 @@ function About() {
             alt={"AWS"}
             url={"https://aws.amazon.com/pt/"}
           />
-          <TechImage
-            img={HerokuIcon}
-            name={"Heroku"}
-            alt={"Heroku"}
-            url={"https://www.heroku.com/"}
-          />
+
           <TechImage
             img={FirebaseIcon}
             name={"Firebase"}
