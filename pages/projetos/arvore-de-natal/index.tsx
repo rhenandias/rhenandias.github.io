@@ -76,7 +76,7 @@ function ArvoreNatal() {
           <ChakraImage
             m={2}
             as={Image}
-            src={Arvore1}
+            src={Arvore1 as unknown as string}
             width={300}
             borderRadius={10}
             alt="Árvore de Natal"
@@ -85,7 +85,7 @@ function ArvoreNatal() {
           <ChakraImage
             m={2}
             as={Image}
-            src={ArvoreGif1}
+            src={ArvoreGif1 as unknown as string}
             width={225}
             borderRadius={10}
             alt="Árvore de Natal"
@@ -94,7 +94,7 @@ function ArvoreNatal() {
           <ChakraImage
             m={2}
             as={Image}
-            src={Arvore2}
+            src={Arvore2 as unknown as string}
             width={300}
             borderRadius={10}
             alt="Árvore de Natal"
@@ -126,7 +126,7 @@ function ArvoreNatal() {
           <ChakraImage
             mx={2}
             as={Image}
-            src={Stl1}
+            src={Stl1 as unknown as string}
             width={400}
             borderRadius={10}
             alt="Árvore de Natal"
@@ -135,7 +135,7 @@ function ArvoreNatal() {
           <ChakraImage
             mx={2}
             as={Image}
-            src={Stl2}
+            src={Stl2 as unknown as string}
             width={400}
             borderRadius={10}
             alt="Árvore de Natal"
@@ -180,7 +180,7 @@ function ArvoreNatal() {
           <ChakraImage
             m={2}
             as={Image}
-            src={Arvore3}
+            src={Arvore3 as unknown as string}
             width={400}
             borderRadius={10}
             alt="Árvore de Natal"
@@ -199,7 +199,7 @@ function ArvoreNatal() {
           <Text>
             Depois de tudo impresso, foi só fazer a montagem eletrônica,
             passando por cada um dos vãos na peça os fios para serem soldados
-            nos LED's coloridos.
+            nos LED&apos;s coloridos.
           </Text>
           <Text>
             Para fazer a programação, foi utilizado um Arduino Nano, um modelo
@@ -216,7 +216,7 @@ function ArvoreNatal() {
           <ChakraImage
             m={2}
             as={Image}
-            src={Arvore4}
+            src={Arvore4 as unknown as string}
             width={400}
             borderRadius={10}
             alt="Árvore de Natal"
@@ -235,10 +235,10 @@ function ArvoreNatal() {
 
         <VStack spacing={4} align={"left"}>
           <Text>
-            Para a rotina de pisca-pisca, o desafio era fazer os LED's piscarem
-            de maneira aleatória e controlados individualmente. Então a lógica
-            foi simples, calcular um tempo aleatório de espera individual para
-            cada um dos LED's.
+            Para a rotina de pisca-pisca, o desafio era fazer os LED&apos;s
+            piscarem de maneira aleatória e controlados individualmente. Então a
+            lógica foi simples, calcular um tempo aleatório de espera individual
+            para cada um dos LED&apos;s.
           </Text>
         </VStack>
 
@@ -261,7 +261,7 @@ function ArvoreNatal() {
           <ChakraImage
             m={2}
             as={Image}
-            src={ArvoreGif2}
+            src={ArvoreGif2 as unknown as string}
             width={800}
             borderRadius={10}
             alt="Árvore de Natal"
@@ -269,7 +269,7 @@ function ArvoreNatal() {
         </Flex>
         <Text align={"center"} fontSize="sm" my={6}>
           <em>
-            Os LED's piscam de maneira bem aleatória, acho que ficou bom :)
+            Os LED&apos;s piscam de maneira bem aleatória, acho que ficou bom :)
           </em>
         </Text>
       </Content>

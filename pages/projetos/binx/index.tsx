@@ -75,7 +75,7 @@ function Binx() {
             <ChakraImage
               m={2}
               as={Image}
-              src={LogoBinx}
+              src={LogoBinx as unknown as string}
               borderRadius={10}
               alt="Logo Binx"
               w={"70%"}
@@ -117,7 +117,7 @@ function Binx() {
             onOpen();
           }}
           as={Image}
-          src={Dashboard1}
+          src={Dashboard1 as unknown as string}
           borderRadius={10}
           alt="Logo Binx"
           w={["100%", "90%"]}
@@ -191,7 +191,7 @@ function Binx() {
           <ChakraImage
             m={2}
             as={Image}
-            src={Arquitetura}
+            src={Arquitetura as unknown as string}
             width={["100%", "70%"]}
             borderRadius={10}
             alt="Arquitetura do sistema Binx"
@@ -232,7 +232,7 @@ function Binx() {
           <ChakraImage
             m={2}
             as={Image}
-            src={Integracoes}
+            src={Integracoes as unknown as string}
             width={["100%", "50%"]}
             borderRadius={10}
             alt="Árvore de Natal"
@@ -259,7 +259,7 @@ function Binx() {
             }}
             m={2}
             as={Image}
-            src={Painel}
+            src={Painel as unknown as string}
             borderRadius={10}
             w={["40%"]}
             alt="Logo Binx"
@@ -272,7 +272,7 @@ function Binx() {
             }}
             m={2}
             as={Image}
-            src={Frete}
+            src={Frete as unknown as string}
             borderRadius={10}
             w={["40%"]}
             alt="Logo Binx"
@@ -285,7 +285,7 @@ function Binx() {
             }}
             m={2}
             as={Image}
-            src={Prospeccao}
+            src={Prospeccao as unknown as string}
             borderRadius={10}
             w={["40%"]}
             alt="Logo Binx"

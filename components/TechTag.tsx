@@ -2,7 +2,16 @@ import React from "react";
 
 import { Tag } from "@chakra-ui/react";
 
-const techs = ["node", "react", "aws", "mysql", "fullstack"] as const;
+const techs = [
+  "node",
+  "react",
+  "aws",
+  "mysql",
+  "fullstack",
+  "arduino",
+  "impressora",
+  "maker",
+] as const;
 
 interface Props {
   tech: typeof techs[number];
@@ -14,6 +23,9 @@ const colors = {
   aws: "orange",
   mysql: "cyan",
   fullstack: "green",
+  arduino: "teal",
+  impressora: "red",
+  maker: "orange",
 };
 
 const texts = {
@@ -22,6 +34,9 @@ const texts = {
   aws: "AWS",
   mysql: "MySQL",
   fullstack: "Fullstack",
+  arduino: "Arduino",
+  impressora: "Impressão 3D",
+  maker: "Maker",
 };
 
 function TechTag({ tech }: Props) {

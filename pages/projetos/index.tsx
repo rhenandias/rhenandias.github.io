@@ -27,7 +27,8 @@ import {
   Divider,
 } from "@chakra-ui/react";
 
-import BinxImage from "./Binx/resources/dashboard_1.png";
+import BinxImage from "./binx/resources/dashboard_1.png";
+import ArvoreNatal from "./arvore-de-natal/resources/8.gif";
 
 import { BsGithub, BsGlobe } from "react-icons/bs";
 import { AddIcon } from "@chakra-ui/icons";
@@ -47,7 +48,7 @@ function Home() {
               <ChakraImage
                 cursor={"pointer"}
                 as={Image}
-                src={BinxImage}
+                src={BinxImage as unknown as string}
                 borderRadius={8}
                 alt="Logo Binx"
               />
@@ -79,28 +80,35 @@ function Home() {
 
                 <Container>
                   <HStack>
-                    <Button
-                      leftIcon={<Icon as={BsGithub} />}
-                      colorScheme="blue"
-                      variant="solid"
-                      size="sm"
+                    <Link
+                      href={"https://github.com/atomo-binx"}
+                      target={"blank"}
                     >
-                      GitHub
-                    </Button>
-                    <Button
-                      leftIcon={<Icon as={BsGlobe} />}
-                      colorScheme="facebook"
-                      variant="outline"
-                      size="sm"
-                    >
-                      Demo
-                    </Button>
+                      <Button
+                        leftIcon={<Icon as={BsGithub} />}
+                        colorScheme="blue"
+                        variant="solid"
+                        size="sm"
+                      >
+                        GitHub
+                      </Button>
+                    </Link>
+                    <Link href={"https://binx.com.br"} target={"blank"}>
+                      <Button
+                        leftIcon={<Icon as={BsGlobe} />}
+                        colorScheme="facebook"
+                        variant="outline"
+                        size="sm"
+                      >
+                        Site
+                      </Button>
+                    </Link>
                   </HStack>
                 </Container>
 
                 <Container>
                   <Text color="teal">
-                    <ChakraLink href="/projetos/binx">
+                    <ChakraLink href="/projetos/binx" as={Link}>
                       Ler mais sobre esse projeto{" "}
                       <AddIcon mx="2px" boxSize={"12px"} />
                     </ChakraLink>
@@ -111,6 +119,67 @@ function Home() {
           </Flex>
 
           <Divider />
+
+          <Flex direction={["column", "row"]}>
+            <Container w={["100%", "50%"]} mt={5} alignSelf={"center"}>
+              <ChakraImage
+                cursor={"pointer"}
+                as={Image}
+                src={ArvoreNatal as unknown as string}
+                borderRadius={8}
+                alt="Árvore de Natal"
+              />
+            </Container>
+            <Flex w={"50%"} align={"center"}>
+              <VStack mt={3} spacing={2}>
+                <Container>
+                  <Heading size={"lg"}>Árvore de Natal</Heading>
+                </Container>
+
+                <Container>
+                  <HStack spacing={2}>
+                    <TechTag tech="arduino" />
+                    <TechTag tech="impressora" />
+                    <TechTag tech="maker" />
+                  </HStack>
+                </Container>
+
+                <Container>
+                  <Text>
+                    Projeto Maker de uma Árvore de Natal de decoração feita com
+                    impressão 3D e Arduino, DIY!
+                  </Text>
+                </Container>
+
+                <Container>
+                  <HStack>
+                    <Link
+                      href={"https://github.com/rhenandias/xmastree"}
+                      target={"blank"}
+                    >
+                      <Button
+                        leftIcon={<Icon as={BsGithub} />}
+                        colorScheme="blue"
+                        variant="solid"
+                        size="sm"
+                      >
+                        GitHub
+                      </Button>
+                    </Link>
+                  </HStack>
+                </Container>
+
+                <Container>
+                  <Text color="teal">
+                    <ChakraLink href="/projetos/arvore-de-natal" as={Link}>
+                      Ler mais sobre esse projeto{" "}
+                      <AddIcon mx="2px" boxSize={"12px"} />
+                    </ChakraLink>
+                  </Text>
+                </Container>
+              </VStack>
+            </Flex>
+          </Flex>
         </VStack>
       </Content>
 

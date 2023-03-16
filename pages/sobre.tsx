@@ -143,6 +143,12 @@ function About() {
             url={"https://pt-br.reactjs.org/"}
           />
           <TechImage
+            img={ReactIcon}
+            name={"React Native"}
+            alt={"React Native"}
+            url={"https://reactnative.dev/"}
+          />
+          <TechImage
             img={PostgreIcon}
             name={"PostgreSQL"}
             alt={"PostgreSQL"}
@@ -166,12 +172,7 @@ function About() {
             alt={"AWS"}
             url={"https://aws.amazon.com/pt/"}
           />
-          <TechImage
-            img={HerokuIcon}
-            name={"Heroku"}
-            alt={"Heroku"}
-            url={"https://www.heroku.com/"}
-          />
+
           <TechImage
             img={FirebaseIcon}
             name={"Firebase"}
