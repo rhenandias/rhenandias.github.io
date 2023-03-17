@@ -1,6 +1,6 @@
 import React from "react";
 
-import Link from "next/link";
+import NextLink from "next/link";
 import Image from "next/image";
 
 import Header from "../../components/Header";
@@ -17,7 +17,7 @@ import {
   Flex,
   Text,
   Image as ChakraImage,
-  Link as ChakraLink,
+  Link,
   Heading,
   VStack,
   HStack,
@@ -25,13 +25,17 @@ import {
   Button,
   Icon,
   Divider,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
 } from "@chakra-ui/react";
 
 import BinxImage from "./binx/resources/dashboard_1.png";
 import ArvoreNatal from "./arvore-de-natal/resources/8.gif";
 
 import { BsGithub, BsGlobe } from "react-icons/bs";
-import { AddIcon } from "@chakra-ui/icons";
+import { AddIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 
 function Home() {
   return (
@@ -80,7 +84,7 @@ function Home() {
 
                 <Container>
                   <HStack>
-                    <Link
+                    <NextLink
                       href={"https://github.com/atomo-binx"}
                       target={"blank"}
                     >
@@ -92,8 +96,8 @@ function Home() {
                       >
                         GitHub
                       </Button>
-                    </Link>
-                    <Link href={"https://binx.com.br"} target={"blank"}>
+                    </NextLink>
+                    <NextLink href={"https://binx.com.br"} target={"blank"}>
                       <Button
                         leftIcon={<Icon as={BsGlobe} />}
                         colorScheme="facebook"
@@ -102,16 +106,16 @@ function Home() {
                       >
                         Site
                       </Button>
-                    </Link>
+                    </NextLink>
                   </HStack>
                 </Container>
 
                 <Container>
                   <Text color="teal">
-                    <ChakraLink href="/projetos/binx" as={Link}>
+                    <Link href="/projetos/binx" as={NextLink}>
                       Ler mais sobre esse projeto{" "}
                       <AddIcon mx="2px" boxSize={"12px"} />
-                    </ChakraLink>
+                    </Link>
                   </Text>
                 </Container>
               </VStack>
@@ -153,7 +157,7 @@ function Home() {
 
                 <Container>
                   <HStack>
-                    <Link
+                    <NextLink
                       href={"https://github.com/rhenandias/xmastree"}
                       target={"blank"}
                     >
@@ -165,21 +169,50 @@ function Home() {
                       >
                         GitHub
                       </Button>
-                    </Link>
+                    </NextLink>
                   </HStack>
                 </Container>
 
                 <Container>
                   <Text color="teal">
-                    <ChakraLink href="/projetos/arvore-de-natal" as={Link}>
+                    <Link href="/projetos/arvore-de-natal" as={NextLink}>
                       Ler mais sobre esse projeto{" "}
                       <AddIcon mx="2px" boxSize={"12px"} />
-                    </ChakraLink>
+                    </Link>
                   </Text>
                 </Container>
               </VStack>
             </Flex>
           </Flex>
+
+          <Divider />
+
+          <Alert
+            status="success"
+            variant="left-accent"
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center"
+            textAlign="center"
+          >
+            <AlertTitle mt={4} mb={1} fontSize="lg">
+              Work In Progress ;)
+            </AlertTitle>
+            <AlertDescription maxWidth="xl">
+              Esse portfólio ainda está em construção, enquanto eu atualizo
+              todos os meus projetos, que tal dar uma olhada no meu GitHub?
+            </AlertDescription>
+            <AlertDescription>
+              <Text color="teal" textDecor={"underline"}>
+                <NextLink
+                  href={"https://github.com/rhenandias"}
+                  target={"blank"}
+                >
+                  Rhenan Dias <Icon as={BsGithub} mx={1} />
+                </NextLink>
+              </Text>
+            </AlertDescription>
+          </Alert>
         </VStack>
       </Content>
 

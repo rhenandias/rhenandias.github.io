@@ -73,7 +73,6 @@ function Binx() {
         >
           <ChakraLink href={"https://binx.com.br"} target={"_blank"}>
             <ChakraImage
-              m={2}
               as={Image}
               src={LogoBinx as unknown as string}
               borderRadius={10}
