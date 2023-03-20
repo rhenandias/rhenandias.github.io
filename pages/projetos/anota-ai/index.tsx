@@ -69,6 +69,36 @@ function AnotaAi() {
           mt={5}
         />
 
+        <Heading my={4} fontSize={"xl"}>
+          O que é o Anota Aí?
+        </Heading>
+
+        <VStack spacing={4} align={"left"}>
+          <Text>
+            <ChakraLink
+              href={"https://anotaai.netlify.app/feed"}
+              target={"_blank"}
+              color="teal.500"
+            >
+              Anota Aí{" "}
+            </ChakraLink>
+            é um projeto desenvolvido durante a disciplina de Laboratório de
+            Sistemas do curso de Análise e Desenvolvimento de Sistemas.
+          </Text>
+          <Text>
+            A ideia do projeto era construir uma plataforma em formato de rede
+            social com feed, para realizar a postagem de conteúdo em formato de
+            texto e imagem, com opções de comentar e curtir cada um dos posts.
+            Também existe a possibilidade de visualizar o perfil de um membro,
+            suas informações de biografia e posts realizados.
+          </Text>
+          <Text>
+            Foi todo feito em conjunto, durante um semestre, por um conjunto de
+            5 alunos, em que as etapas do desenvolvimento foram separadas entre
+            cada um dos alunos.
+          </Text>
+        </VStack>
+
         <ChakraImage
           as={Image}
           src={Login as unknown as string}
