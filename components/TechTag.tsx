@@ -11,6 +11,8 @@ const techs = [
   "arduino",
   "impressora",
   "maker",
+  "postgresql",
+  "socketio",
 ] as const;
 
 interface Props {
@@ -26,6 +28,8 @@ const colors = {
   arduino: "teal",
   impressora: "red",
   maker: "orange",
+  postgresql: "pink",
+  socketio: "green",
 };
 
 const texts = {
@@ -37,6 +41,8 @@ const texts = {
   arduino: "Arduino",
   impressora: "Impressão 3D",
   maker: "Maker",
+  postgresql: "PostgreSQL",
+  socketio: "Socket.IO",
 };
 
 function TechTag({ tech }: Props) {

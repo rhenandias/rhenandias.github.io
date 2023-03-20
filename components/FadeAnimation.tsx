@@ -17,7 +17,7 @@ function FadeAnimation({ children, idx }: Props) {
   }, [idx]);
 
   return (
-    <ScaleFade initialScale={0.6} in={open} w={"100%"}>
+    <ScaleFade initialScale={0.6} in={open}>
       {children}
     </ScaleFade>
   );
