@@ -294,6 +294,20 @@ function Home() {
                 <ListItem>
                   <Text my={1}>Carga horária: 10h</Text>
                 </ListItem>
+                <ListItem>
+                  <Text my={1}>
+                    <ChakraLink
+                      as={Link}
+                      color="teal"
+                      href={
+                        "https://cursos.alura.com.br/course/nest-js-typeorm"
+                      }
+                      isExternal
+                    >
+                      Página do curso <ExternalLinkIcon mx={1} mb={1} />
+                    </ChakraLink>
+                  </Text>
+                </ListItem>
               </UnorderedList>
             </Flex>
           </Flex>
@@ -332,6 +346,20 @@ function Home() {
                 <ListItem>
                   <Text my={1}>Carga horária: 10h</Text>
                 </ListItem>
+                <ListItem>
+                  <Text my={1}>
+                    <ChakraLink
+                      as={Link}
+                      color="teal"
+                      href={
+                        "https://cursos.alura.com.br/course/nestjs-criando-api-resftul"
+                      }
+                      isExternal
+                    >
+                      Página do curso <ExternalLinkIcon mx={1} mb={1} />
+                    </ChakraLink>
+                  </Text>
+                </ListItem>
               </UnorderedList>
             </Flex>
           </Flex>
@@ -368,6 +396,20 @@ function Home() {
                 </ListItem>
                 <ListItem>
                   <Text my={1}>Carga horária: 8h</Text>
+                </ListItem>
+                <ListItem>
+                  <Text my={1}>
+                    <ChakraLink
+                      as={Link}
+                      color="teal"
+                      href={
+                        "https://cursos.alura.com.br/course/chatgpt-desvendando-ia-conversas-aplicacoes"
+                      }
+                      isExternal
+                    >
+                      Página do curso <ExternalLinkIcon mx={1} mb={1} />
+                    </ChakraLink>
+                  </Text>
                 </ListItem>
               </UnorderedList>
             </Flex>
