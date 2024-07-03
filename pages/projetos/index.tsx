@@ -11,8 +11,6 @@ import Content from "../../components/Content";
 import TechTag from "../../components/TechTag";
 
 import {
-  Card,
-  CardBody,
   Container,
   Flex,
   Text,
@@ -21,12 +19,10 @@ import {
   Heading,
   VStack,
   HStack,
-  Tag,
   Button,
   Icon,
   Divider,
   Alert,
-  AlertIcon,
   AlertTitle,
   AlertDescription,
 } from "@chakra-ui/react";
@@ -35,7 +31,7 @@ import BinxImage from "./binx/resources/dashboard_1.png";
 import ArvoreNatal from "./arvore-de-natal/resources/8.gif";
 
 import { BsGithub, BsGlobe } from "react-icons/bs";
-import { AddIcon, ExternalLinkIcon } from "@chakra-ui/icons";
+import { AddIcon } from "@chakra-ui/icons";
 
 function Home() {
   return (
@@ -46,7 +42,7 @@ function Home() {
       />
 
       <Content>
-        <VStack spacing={6}>
+        <FadeAnimation idx={1}>
           <Flex direction={["column", "row"]}>
             <Container w={["100%", "50%"]} mt={5} alignSelf={"center"}>
               <ChakraImage
@@ -121,11 +117,15 @@ function Home() {
               </VStack>
             </Flex>
           </Flex>
+        </FadeAnimation>
 
-          <Divider />
+        <FadeAnimation idx={2}>
+          <Divider my={4} />
+        </FadeAnimation>
 
+        <FadeAnimation idx={3}>
           <Flex direction={["column", "row"]}>
-            <Container w={["100%", "50%"]} mt={5} alignSelf={"center"}>
+            <Container w={["100%", "50%"]} mt={1} alignSelf={"center"}>
               <ChakraImage
                 cursor={"pointer"}
                 as={Image}
@@ -184,9 +184,13 @@ function Home() {
               </VStack>
             </Flex>
           </Flex>
+        </FadeAnimation>
 
-          <Divider />
+        <FadeAnimation idx={4}>
+          <Divider my={4} />
+        </FadeAnimation>
 
+        <FadeAnimation idx={5}>
           <Alert
             status="success"
             variant="left-accent"
@@ -213,7 +217,7 @@ function Home() {
               </Text>
             </AlertDescription>
           </Alert>
-        </VStack>
+        </FadeAnimation>
       </Content>
 
       <Footer />

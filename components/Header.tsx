@@ -34,15 +34,15 @@ function Header({ title, content }: Props) {
           <ColorModeToggle />
         </Box>
       </Flex>
-      <Flex direction="row" justify="space-between" mt="6">
-        <Box>
+      <Flex direction="row" justify="start" mt="6">
+        {/* <Box>
           <ChakraLink color="gray.500" mr="5" as={Link} href="/">
             Início
           </ChakraLink>
           <ChakraLink color="gray.500" mr="5" as={Link} href="/projetos">
             Projetos
           </ChakraLink>
-        </Box>
+        </Box> */}
         <Box>
           <ChakraLink
             as={Link}

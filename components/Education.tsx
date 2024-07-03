@@ -32,7 +32,7 @@ function Education({ img, title, school, level, year }: Props) {
           src={forcedString}
           alt="Imagem da Instituição Educacional"
           boxSize={"50px"}
-          mr={[4]}
+          mr={[8]}
         />
         <Flex direction={"column"}>
           <Heading fontSize={"xl"} my={1}>
