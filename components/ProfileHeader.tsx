@@ -38,14 +38,13 @@ function ProfileHeader() {
         <FadeAnimation idx={4}>
           <Text mt={4}>
             Meu nome é Rhenan, sou formado em Análise e Desenvolvimento de
-            Sistemas e Automação Industrial.
+            Sistemas e Automação Industrial e sou desenvolvedor fullstack.
           </Text>
         </FadeAnimation>
         <FadeAnimation idx={5}>
           <Text mt={4}>
-            Aqui você encontra um pouco sobre mim, projetos em que já trabalhei
-            ou estou trabalhando, e sobre coisas que estou aprendendo no
-            momento.
+            Aqui você encontra um pouco sobre mim, minhas experiências,
+            formações e tecnologias que aprendi ou estou aprendendo.
           </Text>
         </FadeAnimation>
         <FadeAnimation idx={6}>
