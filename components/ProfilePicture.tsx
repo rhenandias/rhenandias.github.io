@@ -2,7 +2,7 @@ import React from "react";
 
 import Image from "next/image";
 
-import Picture from "../assets/rhenandias.jpeg";
+import Picture from "../assets/rhenandias2.jpeg";
 
 function ProfilePicture() {
   return (
