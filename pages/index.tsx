@@ -88,16 +88,16 @@ function Home() {
           </Text>
         </FadeAnimation>
 
-        <FadeAnimation idx={6}>
+        {/* <FadeAnimation idx={6}>
           <Text mt={3} lineHeight={2}>
             Gosto sempre de estar aprendendo algo novo, mas também gosto de
             gatos, foguetes, xadrez, impressoras 3D, cubos mágicos e hambúrguer.
           </Text>
-        </FadeAnimation>
+        </FadeAnimation> */}
 
         <FadeAnimation idx={7}>
           <Text textAlign={"center"} my={3}>
-            <Emoji text={":laptop: :cat: :rocket: :hamburger: "} />
+            <Emoji text={":laptop: :cat: :rocket: :hamburger:"} />
           </Text>
         </FadeAnimation>
 
@@ -261,6 +261,38 @@ function Home() {
           <Heading fontSize={"2xl"} my={"5"}>
             Outras Atividades, Cursos e Eventos
           </Heading>
+
+          <Flex mb={5}>
+            <ChakraImage
+              as={Image}
+              borderRadius="10%"
+              src={AwsIcon as unknown as string}
+              alt="Logo AWS"
+              boxSize={"50px"}
+              mr={[8]}
+            />
+            <Flex direction={"column"}>
+              <Heading fontSize={"xl"} my={1}>
+                AWS Summit São Paulo 2024
+              </Heading>
+              <Heading fontSize={"md"} my={1}>
+                Transamerica Expo Center
+              </Heading>
+
+              <UnorderedList>
+                <ListItem>
+                  <Text my={1}>
+                    Eventro presencial com palestras e workshops sobre inovação
+                    e soluções flexíveis e confiáveis em grande escala
+                    oferecidas pela AWS.
+                  </Text>
+                </ListItem>
+                <ListItem>
+                  <Text my={1}>Data do Evento: Agosto, 2024</Text>
+                </ListItem>
+              </UnorderedList>
+            </Flex>
+          </Flex>
 
           <Flex mb={5}>
             <ChakraImage
