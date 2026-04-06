@@ -119,6 +119,9 @@ function Home() {
                 <ListItem>
                   Construção e documentação de API&apos;s (Node.js e Nest.js)
                 </ListItem>
+                <ListItem>
+                  Integração de modelos IA/LLM e automação com n8n
+                </ListItem>
                 <ListItem>HTML, JavaScript, CSS</ListItem>
                 <ListItem>
                   Bancos de dados relacionais MySQL/PostgreSQL
@@ -133,6 +136,12 @@ function Home() {
               <UnorderedList>
                 <ListItem>Containers (Docker e Docker Compose)</ListItem>
                 <ListItem>Serviços em nuvem (AWS, Firebase)</ListItem>
+                <ListItem>
+                  Gerenciamento de infraestrutura com AWS CloudFormation
+                </ListItem>
+                <ListItem>
+                  Gerenciamento de filas e ingestão com AWS SQS e AWS Lambda
+                </ListItem>
                 <ListItem>
                   Testes automatizados e CI/CD (Jest e GitHub Actions)
                 </ListItem>
@@ -273,6 +282,38 @@ function Home() {
             />
             <Flex direction={"column"}>
               <Heading fontSize={"xl"} my={1}>
+                AWS Summit São Paulo 2025
+              </Heading>
+              <Heading fontSize={"md"} my={1}>
+                Transamerica Expo Center
+              </Heading>
+
+              <UnorderedList>
+                <ListItem>
+                  <Text my={1}>
+                    Evento presencial com palestras e workshops sobre inovação
+                    e soluções flexíveis e confiáveis em grande escala
+                    oferecidas pela AWS.
+                  </Text>
+                </ListItem>
+                <ListItem>
+                  <Text my={1}>Data do Evento: Agosto, 2025</Text>
+                </ListItem>
+              </UnorderedList>
+            </Flex>
+          </Flex>
+
+          <Flex mb={5}>
+            <ChakraImage
+              as={Image}
+              borderRadius="10%"
+              src={AwsIcon as unknown as string}
+              alt="Logo AWS"
+              boxSize={"50px"}
+              mr={[8]}
+            />
+            <Flex direction={"column"}>
+              <Heading fontSize={"xl"} my={1}>
                 AWS Summit São Paulo 2024
               </Heading>
               <Heading fontSize={"md"} my={1}>
@@ -282,7 +323,7 @@ function Home() {
               <UnorderedList>
                 <ListItem>
                   <Text my={1}>
-                    Eventro presencial com palestras e workshops sobre inovação
+                    Evento presencial com palestras e workshops sobre inovação
                     e soluções flexíveis e confiáveis em grande escala
                     oferecidas pela AWS.
                   </Text>
